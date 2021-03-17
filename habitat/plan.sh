@@ -1,7 +1,7 @@
 pkg_name=hab-python-app
-pkg_origin=indradhanush
+pkg_origin=just4id
 pkg_version="0.1.0"
-pkg_maintainer="Indradhanush Gupta <indra@kinvolk.io>"
+pkg_maintainer="Jacky"
 pkg_license=('Python-2.0')
 pkg_source="https://github.com/indradhanush/${pkg_name}/archive/v${pkg_version}.tar.gz"
 pkg_deps=(
@@ -32,6 +32,7 @@ do_unpack() {
 
 do_prepare() {
     set -x
+    pip install --upgrade pip
     pip install virtualenv
     virtualenv $pkg_prefix/venv
     source $pkg_prefix/venv/bin/activate
@@ -48,6 +49,7 @@ do_install() {
     make install
     mkdir -p $pkg_prefix/src
     cp -r app/ quotes/ manage.py $pkg_prefix/src/
+    touch /usr/share/timezone/UTC
     popd
     set +x
 }
