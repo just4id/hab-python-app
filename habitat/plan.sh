@@ -3,7 +3,7 @@ pkg_origin=just4id
 pkg_version="0.1.0"
 pkg_maintainer="Jacky"
 pkg_license=('Python-2.0')
-pkg_source="https://github.com/indradhanush/${pkg_name}/archive/v${pkg_version}.tar.gz"
+pkg_source="https://github.com/just4id/${pkg_name}/archive/v${pkg_version}.tar.gz"
 pkg_deps=(
     core/python
     core/git
@@ -25,7 +25,7 @@ do_unpack() {
     set -x
     mkdir -p "$demo_pkg_dir/src"
     pushd "$demo_pkg_dir/src"
-    git clone https://github.com/indradhanush/hab-python-app
+    git clone https://github.com/just4id/hab-python-app
     set +x
     return 0
 }
@@ -49,7 +49,7 @@ do_install() {
     make install
     mkdir -p $pkg_prefix/src
     cp -r app/ quotes/ manage.py $pkg_prefix/src/
-    touch /usr/share/timezone/UTC
+    touch /usr/share/zoneinfo/UTC
     popd
     set +x
 }
