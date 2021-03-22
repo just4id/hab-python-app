@@ -1,7 +1,7 @@
 version: '3'
 services:
    web:
-      image: indradhanush/hab-python-app:latest
+      image: just4id/hab-python-app:latest
       ports:
-      - 5000:8000
+      - 8000:8000
 
