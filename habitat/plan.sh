@@ -13,6 +13,11 @@ demo_pkg_dir="$HAB_CACHE_SRC_PATH/$pkg_name-$pkg_version"
 # pkg_filename="${pkg_name}-${pkg_version}.tar.gz"
 # pkg_shasum="348e82e816855fc323af9cbecc1ba8027b21c91298a22c2575450bae554f8ed8"
 
+pkg_exports=(
+  [status-port]=status.port
+)
+pkg_exposes=(status-port status-port)
+
 do_download() {
     return 0
 }
